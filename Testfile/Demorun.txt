@@ -1,0 +1,17 @@
+DEPLOYMENT PARAMETERS
+======================================================================
+
+ParamRegistry Constructor:
+  _pkCA_x: 0xe979882d5deec5bfe551e5624f6534d2d45ddbdae57b64f9dd43fd37f6f8239e
+  _pkCA_y: 0xae764de15f98ef5b0de9dc9488d6c323bef1f01db2ca3db9a6f652f9af7ccd28
+  _t: 1
+  _n: 3
+  _hashSpec: "Keccak256-H0-H1"
+
+BiometricWallet Constructor:
+  ownerAddr: 0x728f91C275Be4c57Ae644c754fAbd88254Ed3378
+  _spentSet: [PASTE_SPENTSET_ADDRESS]
+
+Testing Keys (Keep Secret!):
+  CA Private Key: 0x54fb98b3147fd06bb4ede03c75ad88ca88d58dffd09cae53f00a0b6434ee7336
+  Owner Private Key: 0x31b3dd281ad44e32005a4506d4742a6403bc9afab195a9a0616dd4ece50d98c4

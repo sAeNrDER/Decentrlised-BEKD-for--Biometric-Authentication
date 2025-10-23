@@ -1,0 +1,282 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "TokenBurned",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "WalletAuthorized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "WalletRevoked",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "authorizeWallet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorizedWallet",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "rhos",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "batchIsUsed",
+				"outputs": [
+					{
+						"internalType": "bool[]",
+						"name": "",
+						"type": "bool[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					}
+				],
+				"name": "isUsed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					}
+				],
+				"name": "markUsed",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "revokeWallet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "used",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Gas-optimized using bool mapping instead of uint256",
+			"kind": "dev",
+			"methods": {
+				"authorizeWallet(address)": {
+					"params": {
+						"wallet": "Address of the BiometricWallet contract"
+					}
+				},
+				"batchIsUsed(bytes32[])": {
+					"params": {
+						"rhos": "Array of token identifiers"
+					},
+					"returns": {
+						"_0": "Array of spent status for each token"
+					}
+				},
+				"isUsed(bytes32)": {
+					"params": {
+						"rho": "Token identifier"
+					},
+					"returns": {
+						"_0": "True if token is spent, false otherwise"
+					}
+				},
+				"markUsed(bytes32)": {
+					"details": "Can only be called by authorized wallet contracts",
+					"params": {
+						"rho": "Token identifier (keccak256(R0))"
+					}
+				},
+				"revokeWallet(address)": {
+					"params": {
+						"wallet": "Address to revoke"
+					}
+				}
+			},
+			"title": "SpentSet",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"authorizeWallet(address)": {
+					"notice": "Authorize a wallet contract to burn tokens"
+				},
+				"batchIsUsed(bytes32[])": {
+					"notice": "Batch check multiple tokens (gas efficient)"
+				},
+				"isUsed(bytes32)": {
+					"notice": "Check if a token has been spent"
+				},
+				"markUsed(bytes32)": {
+					"notice": "Mark a token as spent (burn it permanently)"
+				},
+				"revokeWallet(address)": {
+					"notice": "Revoke wallet authorization"
+				}
+			},
+			"notice": "Enforces one-time token use through atomic freshness checks",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SpentSet.sol": "SpentSet"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/SpentSet.sol": {
+			"keccak256": "0x59ac1e5fad2709d0bcfa49eb937b3ae9f0e59221a8b27fbfd6724a4fe1f0fb79",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1aa133770789a354949e0870937bbf2e5b56dd46f29b5d62e94cdfaffcb11b4c",
+				"dweb:/ipfs/QmZvm38XP8hyu6FhyUecoNZJBxchMmbKSPpExEXK5xS6C6"
+			]
+		}
+	},
+	"version": 1
+}

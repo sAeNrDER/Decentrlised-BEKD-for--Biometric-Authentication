@@ -1,0 +1,394 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "ownerAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_spentSet",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "key",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizedKeyAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "key",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizedKeyRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "tokenId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"name": "OperationExecuted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spentSet",
+						"type": "address"
+					}
+				],
+				"name": "WalletDeployed",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "key",
+						"type": "address"
+					}
+				],
+				"name": "addAuthorizedKey",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "authMessageTypehash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorizedKey",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "domainSeparator",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "key",
+						"type": "address"
+					}
+				],
+				"name": "isAuthorized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "magicValue",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "key",
+						"type": "address"
+					}
+				],
+				"name": "removeAuthorizedKey",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "spentSet",
+				"outputs": [
+					{
+						"internalType": "contract ISpentSet",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "userOpHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "validateUserOp",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "validateUserOpSimple",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addAuthorizedKey(address)": {
+					"params": {
+						"key": "Address to authorize"
+					}
+				},
+				"constructor": {
+					"params": {
+						"_spentSet": "Address of deployed SpentSet contract",
+						"ownerAddr": "Address derived from K = g^k (biometric key)"
+					}
+				},
+				"isValidSignature(bytes32,bytes)": {
+					"params": {
+						"hash": "Message hash",
+						"signature": "ECDSA signature"
+					},
+					"returns": {
+						"magicValue": "0x1626ba7e if valid, 0xffffffff otherwise"
+					}
+				},
+				"removeAuthorizedKey(address)": {
+					"params": {
+						"key": "Address to revoke"
+					}
+				},
+				"validateUserOp(bytes32,bytes32,bytes)": {
+					"params": {
+						"rho": "Token identifier (keccak256(R0))",
+						"signature": "ECDSA signature (65 bytes: r, s, v)",
+						"userOpHash": "Hash of the user operation"
+					},
+					"returns": {
+						"success": "True if validation succeeds"
+					}
+				},
+				"validateUserOpSimple(bytes32,bytes)": {
+					"details": "Useful for testing"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addAuthorizedKey(address)": {
+					"notice": "Add authorized signing key"
+				},
+				"authMessageTypehash()": {
+					"notice": "Get auth message typehash"
+				},
+				"constructor": {
+					"notice": "Deploy wallet with biometric-derived owner"
+				},
+				"domainSeparator()": {
+					"notice": "Get domain separator"
+				},
+				"isAuthorized(address)": {
+					"notice": "Check if an address is authorized"
+				},
+				"isValidSignature(bytes32,bytes)": {
+					"notice": "Validate signature according to EIP-1271"
+				},
+				"removeAuthorizedKey(address)": {
+					"notice": "Remove authorized signing key"
+				},
+				"validateUserOp(bytes32,bytes32,bytes)": {
+					"notice": "Validate user operation with biometric token"
+				},
+				"validateUserOpSimple(bytes32,bytes)": {
+					"notice": "Simplified validation (without userOpHash)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/BiometricWallet.sol": "BiometricWallet"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/BiometricWallet.sol": {
+			"keccak256": "0xb9cbec493c89186e75ac79324f720c6ed96f01cf2973cac2a8079466d5324e0e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e9c40c44691ae645bf1c927d846b11254bd21ace506bb03910364e646df46686",
+				"dweb:/ipfs/QmPp1rx9zGLSHfE3Fv7ftDSydRm5VRx2fPEThx4ndLGVQW"
+			]
+		}
+	},
+	"version": 1
+}

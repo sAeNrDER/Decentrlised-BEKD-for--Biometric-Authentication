@@ -1,0 +1,81 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					}
+				],
+				"name": "isUsed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "rho",
+						"type": "bytes32"
+					}
+				],
+				"name": "markUsed",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Integrates BEKD token-based biometric authentication",
+			"kind": "dev",
+			"methods": {},
+			"title": "BiometricWallet",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "ERC-4337 compatible wallet with EIP-1271 signature validation",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/BiometricWallet.sol": "ISpentSet"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/BiometricWallet.sol": {
+			"keccak256": "0xb9cbec493c89186e75ac79324f720c6ed96f01cf2973cac2a8079466d5324e0e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e9c40c44691ae645bf1c927d846b11254bd21ace506bb03910364e646df46686",
+				"dweb:/ipfs/QmPp1rx9zGLSHfE3Fv7ftDSydRm5VRx2fPEThx4ndLGVQW"
+			]
+		}
+	},
+	"version": 1
+}
