@@ -58,7 +58,7 @@ npm install --save-dev hardhat @nomiclabs/hardhat-ethers ethers hardhat-gas-repo
 ---
 
 ## 🚀 Quick Start
-
+### 0. For Acadmic interigty issue pls download the Source code to deploy or use online brance for clone
 ### 1. Generate Deployment Parameters
 
 ```bash
